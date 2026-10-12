@@ -1,0 +1,21 @@
+{
+  "completedAt": "2026-10-12T15:27:04.751Z",
+  "durationMs": 2,
+  "finalizationStatus": "finalized",
+  "framework": "",
+  "ingestedAt": "2026-10-12T15:27:04.752Z",
+  "llmCallsCount": 0,
+  "sessionId": "ab671f68994d464999d4882fef091638",
+  "spansCount": 2,
+  "startedAt": "2026-10-12T15:27:03.536Z",
+  "status": "OK",
+  "tags": [],
+  "toolCallsCount": 1,
+  "totalCostUsd": 0,
+  "totalTokens": 0,
+  "traceId": "ab671f68994d464999d4882fef091638",
+  "traceName": "receipts.run",
+  "workflowName": "receipts",
+  "metadataRevision": 0,
+  "metadataUpdatedAt": null
+}

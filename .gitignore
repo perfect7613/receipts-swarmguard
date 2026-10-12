@@ -4,3 +4,10 @@
 !.env.example
 __pycache__/
 .venv/
+.pytest_cache/
+dist/
+*.egg-info/
+artifacts/
+.entire/settings.local.json
+.entire/logs/
+.entire/sessions/

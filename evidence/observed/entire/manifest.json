@@ -1,0 +1,22 @@
+{
+  "version": {
+    "exit_code": 0,
+    "path": "artifacts/entire/version.txt"
+  },
+  "status": {
+    "exit_code": 0,
+    "path": "artifacts/entire/status.txt"
+  },
+  "graph_search": {
+    "exit_code": 0,
+    "path": "artifacts/entire/graph_search.txt"
+  },
+  "graph_impact": {
+    "exit_code": 0,
+    "path": "artifacts/entire/graph_impact.txt"
+  },
+  "checkpoints": {
+    "exit_code": 0,
+    "path": "artifacts/entire/checkpoints.txt"
+  }
+}

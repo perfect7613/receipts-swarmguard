@@ -1,0 +1,4 @@
+{"sequence": 1, "event": "CREATED", "at": "2026-10-12T15:27:03.548384+00:00", "fixture": "payment", "scenario": "clean", "track": "controlled_replay"}
+{"sequence": 2, "event": "EXECUTING", "at": "2026-10-12T15:27:03.548396+00:00", "attempt": 1, "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d"}
+{"sequence": 3, "event": "LINEAGE", "at": "2026-10-12T15:27:03.548946+00:00", "passed": false, "reasons": ["MISSING_TRUSTED_COVERAGE"], "missing_requirements": ["distinct_keys", "first_charge", "invalid_input", "payload_conflict", "replay"], "unique_origins": ["execution-002"], "endorsements": 3, "origins_by_claim": {"claim-002": ["execution-002"], "claim-003": ["execution-002"], "claim-004": ["execution-002"]}}
+{"sequence": 4, "event": "ACCEPTED", "at": "2026-10-12T15:27:03.549447+00:00", "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d"}

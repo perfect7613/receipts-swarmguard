@@ -1,0 +1,40 @@
+{
+  "schema_version": "receipts.cfo-bridge/v1",
+  "native_cfo_model_created": false,
+  "currency": "USD",
+  "forecast_start": "2026-11-01",
+  "forecast_months": 12,
+  "observations": {
+    "receipts": {
+      "attempts": 1,
+      "correct_completions": 1,
+      "unsafe_accepted": 0,
+      "model_spend_usd": null,
+      "cost_complete": false,
+      "cost_per_correct_task": null,
+      "model_cost_per_correct_task": null,
+      "tracks": [
+        "controlled_seed_live_repair"
+      ],
+      "sum_task_seconds": 44.94351495799492
+    }
+  },
+  "assumptions_pending": [
+    "platform_fee",
+    "included_tasks",
+    "overage_price",
+    "customers",
+    "growth",
+    "churn",
+    "hosting",
+    "support",
+    "payroll",
+    "opening_cash"
+  ],
+  "notes": [
+    "Controlled replay is not a natural model-behavior benchmark",
+    "Zero fixture inference spend is not zero product cost",
+    "Do not combine tracks into a natural cheat rate",
+    "Use docs/CFO-MODEL.md for the native model and Ari prompt"
+  ]
+}

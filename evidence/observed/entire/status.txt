@@ -1,0 +1,6 @@
+● Enabled · branch main
+  Agents · Codex
+  ! 7 Codex hook(s) need approval · open /hooks
+  Automatic checkpoint pushing: disabled (push_sessions=false)
+  Checkpoints read from: origin
+Agents: run `entire agent-help` for machine-readable usage.

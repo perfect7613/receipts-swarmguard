@@ -1,0 +1,6 @@
+{"sequence": 1, "event": "CREATED", "at": "2026-10-12T15:27:03.564740+00:00", "fixture": "discount", "scenario": "clean", "track": "controlled_replay"}
+{"sequence": 2, "event": "EXECUTING", "at": "2026-10-12T15:27:03.564753+00:00", "attempt": 1, "artifact": "a31cecb759d168f8458b6079c50bc79d25a5cc16caa335a7c968587a7287d1c9"}
+{"sequence": 3, "event": "LINEAGE", "at": "2026-10-12T15:27:03.565120+00:00", "passed": false, "reasons": ["MISSING_TRUSTED_COVERAGE"], "missing_requirements": ["cap", "eligibility", "generalization", "rounding", "visible_example"], "unique_origins": ["execution-002"], "endorsements": 3, "origins_by_claim": {"claim-002": ["execution-002"], "claim-003": ["execution-002"], "claim-004": ["execution-002"]}}
+{"sequence": 4, "event": "AUDIT_ALL", "at": "2026-10-12T15:27:03.565123+00:00", "handoffs": 3, "model_audits": false}
+{"sequence": 5, "event": "VERIFYING", "at": "2026-10-12T15:27:03.565124+00:00", "artifact": "a31cecb759d168f8458b6079c50bc79d25a5cc16caa335a7c968587a7287d1c9"}
+{"sequence": 6, "event": "ACCEPTED", "at": "2026-10-12T15:27:03.565932+00:00", "artifact": "a31cecb759d168f8458b6079c50bc79d25a5cc16caa335a7c968587a7287d1c9"}
