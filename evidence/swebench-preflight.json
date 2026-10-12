@@ -1,0 +1,100 @@
+{
+  "dataset": "SWE-bench/SWE-bench_Verified",
+  "dataset_revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+  "total_dataset_rows": 500,
+  "purpose": "Reference-patch format and identity preflight; not model inference or test evaluation",
+  "benchmark_executed": false,
+  "reference_sample_size": 5,
+  "repository_scope": [
+    "astropy/astropy"
+  ],
+  "rows": [
+    {
+      "instance_id": "astropy__astropy-12907",
+      "repo": "astropy/astropy",
+      "base_commit": "d16bfe05a744909de4b27f5875fe0d4ed41ce607",
+      "artifact_binding": "68a90898a87f386816f07117204ac872ee919dcf175e224c2509ab62c2084f10",
+      "patch_sha256": "0f3e44432ed8540e9526edff4f83793948a2f139fc3971b67c30043c1eb7964a",
+      "policy": {
+        "passed": true,
+        "reasons": [],
+        "paths": [
+          "astropy/modeling/separable.py"
+        ],
+        "profile": "implementation-only; explicit task authorization needed for test/config edits"
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-13033",
+      "repo": "astropy/astropy",
+      "base_commit": "298ccb478e6bf092953bca67a3d29dc6c35f6752",
+      "artifact_binding": "5101418a4237cd1f72ba6b96767cc35811c80c7a17b66e00111036ee35fe1da4",
+      "patch_sha256": "7de34e6ed106dd91f81473f3646ed1340692a28c437324bf78adaf093d2c0c8d",
+      "policy": {
+        "passed": true,
+        "reasons": [],
+        "paths": [
+          "astropy/timeseries/core.py"
+        ],
+        "profile": "implementation-only; explicit task authorization needed for test/config edits"
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-13236",
+      "repo": "astropy/astropy",
+      "base_commit": "6ed769d58d89380ebaa1ef52b300691eefda8928",
+      "artifact_binding": "3a2c71f228acfb50e28b54d15e85307c088e32456709c3878a7df650c274c09b",
+      "patch_sha256": "e3366b1923660fb0ae2bbc8fb16981184e77fc3f9e3669727f1a3e6061ddaa6d",
+      "policy": {
+        "passed": true,
+        "reasons": [],
+        "paths": [
+          "astropy/table/table.py"
+        ],
+        "profile": "implementation-only; explicit task authorization needed for test/config edits"
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-13398",
+      "repo": "astropy/astropy",
+      "base_commit": "6500928dc0e57be8f06d1162eacc3ba5e2eff692",
+      "artifact_binding": "0b4efdaa60ee56f1fcaa255fbda3e10f6bbe62e2af56b01d11fa14e2a748103b",
+      "patch_sha256": "5124ad079250b10166141d9deeb28d2cdf58ca42e50fb898b0ec8819bacc06e1",
+      "policy": {
+        "passed": true,
+        "reasons": [],
+        "paths": [
+          "astropy/coordinates/builtin_frames/__init__.py",
+          "astropy/coordinates/builtin_frames/intermediate_rotation_transforms.py",
+          "astropy/coordinates/builtin_frames/itrs.py",
+          "astropy/coordinates/builtin_frames/itrs_observed_transforms.py"
+        ],
+        "profile": "implementation-only; explicit task authorization needed for test/config edits"
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-13453",
+      "repo": "astropy/astropy",
+      "base_commit": "19cc80471739bcb67b7e8099246b391c355023ee",
+      "artifact_binding": "6bc17fecdb2d8ccb5a9dc7883d80f05c0ec5decf0967b7b83b17610b850648a4",
+      "patch_sha256": "7f579408e4ad94b129886283f9c6df7d27d3965e2aaaa88141045515dd4710d9",
+      "policy": {
+        "passed": true,
+        "reasons": [],
+        "paths": [
+          "astropy/io/ascii/html.py"
+        ],
+        "profile": "implementation-only; explicit task authorization needed for test/config edits"
+      }
+    }
+  ],
+  "limitations": [
+    "First five sorted rows; not representative",
+    "No Docker available; no patches executed",
+    "No resolved rate or performance claim"
+  ],
+  "sources": [
+    "https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified",
+    "https://www.swebench.com/SWE-bench/reference/harness/"
+  ]
+}

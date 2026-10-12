@@ -9,6 +9,7 @@ from .agents import ModelAgent
 from .controller import Controller, save_run
 from .sponsors import CFOClient, capture_entire, cfo_bridge
 from .telemetry import Telemetry, load_env
+from .benchmarks import read_predictions, prepare_swebench, audit_swebench_report
 
 
 def main(argv=None):
@@ -33,9 +34,35 @@ def main(argv=None):
     cfo.add_argument("--tool")
     cfo.add_argument("--args", type=Path)
     cfo.add_argument("--execute", action="store_true", help="Actually invoke the supplied tool; otherwise preview")
+    bench = sub.add_parser("benchmark", help="Prepare SWE-bench patches or audit an external harness report")
+    bench.add_argument("action", choices=("prepare", "audit"))
+    bench.add_argument("--predictions", type=Path, required=True)
+    bench.add_argument("--tasks", type=Path)
+    bench.add_argument("--dataset-revision")
+    bench.add_argument("--manifest", type=Path)
+    bench.add_argument("--report", type=Path)
+    bench.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     load_env()
     try:
+        if args.command == "benchmark":
+            if args.action == "prepare":
+                if not args.tasks or not args.dataset_revision:
+                    parser.error("benchmark prepare requires --tasks and --dataset-revision")
+                result = prepare_swebench(read_predictions(args.predictions), json.loads(args.tasks.read_text()),
+                                          args.dataset_revision, args.output)
+                print(json.dumps({"run_id": result["run_id"], "tasks": len(result["bindings"]),
+                                  "benchmark_executed": False, "manifest": str(args.output / "manifest.json")}, indent=2))
+            else:
+                if not args.manifest or not args.report:
+                    parser.error("benchmark audit requires --manifest and --report")
+                result = audit_swebench_report(json.loads(args.manifest.read_text()), args.predictions,
+                                               json.loads(args.report.read_text()))
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_text(json.dumps(result, indent=2) + "\n")
+                print(json.dumps({k: result[k] for k in ("attempted", "reported_resolved", "unknown_ids",
+                                                        "trusted_execution_verified")}, indent=2))
+            return 0
         if args.command == "entire":
             print(json.dumps(capture_entire(Path.cwd(), args.output), indent=2))
             return 0

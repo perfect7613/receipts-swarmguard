@@ -28,6 +28,12 @@ This seeds the faulty input, then runs real model reviewers and repair. To let t
 
 Alternatively set `OPENAI_API_KEY`, `RECEIPTS_MODEL`, and optional `OPENAI_BASE_URL` in your environment/ignored `.env`, then use `--backend openai`. No provider secrets are passed to the Codex subprocess. Live trials use provider resources; actual billing remains unknown unless price and infrastructure observations are available.
 
+## Real repository evaluation
+
+The new benchmark bridge prepares official SWE-bench prediction artifacts, hides gold/verifier material from worker instructions, binds patch and base identities, and audits imported reports for consistency. Imported reports remain unauthenticated. See [real-world expansion](docs/REAL-WORLD-EXPANSION.md) for commands and the proposed **SWE-Bench Pro V2 fresh-replay evaluation**.
+
+Five upstream Verified reference patches passed preparation preflight; no external benchmark tasks have been executed. The [claims guide](docs/CLAIMS.md) separates demonstrated behavior from planned results. **54 automated tests pass.**
+
 ## Sponsor setup
 
 ### neatlogs

@@ -18,7 +18,7 @@ Updated 12 October 2026. This supersedes the planning-only status of the earlier
 
 ## Observed verification
 
-**40 tests pass.** The wheel and source distribution build successfully. Tests cover observable contracts, defined payment mutants, denied candidate capabilities, stale/forged evidence, recovery, clean controls, usage isolation, and MCP request/auth handling.
+**54 tests pass.** The wheel and source distribution build successfully. Tests cover observable contracts, defined payment mutants, denied candidate capabilities, stale/forged evidence, recovery, clean controls, usage isolation, and MCP request/auth handling.
 
 The 12 controlled runs use two fixtures × shortcut/clean × three arms. Across the two shortcut cases, standard accepts two oracle-invalid candidates. Receipts and always-audit both reject the initial candidates and accept correct fixture repairs. All six clean controls pass without repair. These are controlled smoke results; always-audit handoffs in this matrix are simulated policy work, not actual auditor-model calls.
 
@@ -27,6 +27,12 @@ The live seeded payment repair used three real Codex calls (reviewer, tester, re
 Entire captured that actual repair transcript through its supported manual session-attach command as checkpoint `01M4RDVGHAK7812BFSKWD8MR3W` (logs-only). Its metadata records the real Codex session and 20,070 repair-call tokens. `entire why` resolves the generated repair's first line to this checkpoint and its prompt. Manual association is explicit; no claim of automatic hooks or agent file-edit capture is made.
 
 A separate live adversarial-prompt trial produced correct code immediately. It is retained as a control outcome, not counted as an induced failure. Its model reviews also expressed concerns beyond the fixture's guaranteed input domain; those advisory concerns do not override successful execution of the fixed supported contract.
+
+## Real-world evaluation bridge
+
+SWE-bench prediction preparation and imported-report auditing are implemented. The bridge binds task/base/patch identities, excludes hidden answers from worker tasks, flags protected-path edits, rejects stale prediction files and inconsistent report accounting, and retains missing tasks in the denominator. External imported reports are never automatically trusted. Fourteen added tests cover these contracts.
+
+Five upstream Verified reference patches passed format and identity preflight, without execution. Docker is unavailable on this host. SWE-Bench Pro V2 with the official locked-agent/fresh-replay protocol is the proposed flagship evaluation; a Harbor executor and authenticated execution receipts remain unimplemented. See [the expansion specification](REAL-WORLD-EXPANSION.md) and [claims guide](CLAIMS.md).
 
 ## YAGNI scope choices
 
