@@ -4,6 +4,8 @@ Updated 12 October 2026. This is the next execution specification, not a claim t
 
 ## Product decision
 
+Agent collusion and reward hacking are the primary threat focus. Repository tasks are the first application and capability evaluation, alongside separate attack and coordination tracks.
+
 Build an acceptance gate for agent-produced artifacts. A coding agent proposes a patch; reviewers cite evidence; a separate verifier checks the exact patch against a fixed contract. The gate records what was checked, blocks unsupported acceptance, and allows bounded repair. The customer is a team using coding agents to resolve repository issues and reviewing their output in CI.
 
 The useful distinction is **approval versus independently supported completion**. Avoid promising a general collusion detector: shared evidence can be valid, and correlated mistakes need not be intentional. A failed test, protected-file edit, or unverifiable assertion is an observable event; intent is a separate research question.

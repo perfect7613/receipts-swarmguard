@@ -1,0 +1,511 @@
+{
+  "schema_version": "receipts.run/v1",
+  "run_id": "13a543e3ca414503",
+  "fixture": "payment",
+  "scenario": "clean",
+  "arm": "receipts",
+  "track": "controlled_replay",
+  "status": "ACCEPTED",
+  "accepted": true,
+  "oracle_passed": true,
+  "correct_completion": true,
+  "unsafe_accepted": false,
+  "wall_seconds": 2.6092813330033096,
+  "repair_attempts": 0,
+  "audit_handoffs": 0,
+  "gate": {
+    "passed": true,
+    "reasons": [],
+    "missing_requirements": [],
+    "unique_origins": [
+      "execution-002",
+      "execution-003"
+    ],
+    "endorsements": 4,
+    "origins_by_claim": {
+      "claim-002": [
+        "execution-002"
+      ],
+      "claim-003": [
+        "execution-002"
+      ],
+      "claim-004": [
+        "execution-002"
+      ],
+      "claim-005": [
+        "execution-003"
+      ]
+    }
+  },
+  "oracle": {
+    "passed": true,
+    "checks": [
+      {
+        "requirement": "first_charge",
+        "passed": true,
+        "observed": {
+          "status": 200,
+          "charges": 1
+        }
+      },
+      {
+        "requirement": "retry_response",
+        "passed": true,
+        "observed": {
+          "status": 200
+        }
+      },
+      {
+        "requirement": "replay",
+        "passed": true,
+        "observed": {
+          "charges_after_replay": 1,
+          "receipt": "order-a"
+        }
+      },
+      {
+        "requirement": "payload_conflict",
+        "passed": true,
+        "observed": {
+          "status": 409,
+          "charges": 1
+        }
+      },
+      {
+        "requirement": "distinct_keys",
+        "passed": true,
+        "observed": {
+          "status": 200,
+          "charges": 2
+        }
+      },
+      {
+        "requirement": "invalid_input",
+        "passed": true,
+        "observed": {
+          "request": {
+            "key": "",
+            "amount": 1
+          },
+          "status": 400
+        }
+      },
+      {
+        "requirement": "invalid_input",
+        "passed": true,
+        "observed": {
+          "request": {
+            "key": "x",
+            "amount": 0
+          },
+          "status": 400
+        }
+      },
+      {
+        "requirement": "invalid_input",
+        "passed": true,
+        "observed": {
+          "request": {
+            "key": "x",
+            "amount": -1
+          },
+          "status": 400
+        }
+      },
+      {
+        "requirement": "replay",
+        "passed": true,
+        "observed": {
+          "amount": 1,
+          "charges_after_replay": 1
+        }
+      },
+      {
+        "requirement": "replay",
+        "passed": true,
+        "observed": {
+          "amount": 999,
+          "charges_after_replay": 1
+        }
+      },
+      {
+        "requirement": "replay",
+        "passed": true,
+        "observed": {
+          "amount": 25001,
+          "charges_after_replay": 1
+        }
+      }
+    ],
+    "coverage": [
+      "distinct_keys",
+      "first_charge",
+      "invalid_input",
+      "payload_conflict",
+      "replay",
+      "retry_response"
+    ],
+    "error": null,
+    "execution_receipt": {
+      "executor": "modal_sandbox",
+      "sandbox_id": "sb-ivoYj6hhSQ6Cw5VmJL8kWl",
+      "app_id": "ap-EplX95BY6HRzHf8qiB0WQS",
+      "image_id": "im-OnueUSbyfOw4M8vMUFKVYB",
+      "at": "2026-10-12T18:24:18.428778+00:00",
+      "block_network_requested": true,
+      "injected_secrets": false,
+      "verifier_sha256": "f5185a5245b5feec2d5c45751204c446d20e2c4f35faa1ce1894b34b448c37e2",
+      "fresh_sandbox": true,
+      "exit_code": 0,
+      "source_sha256": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+      "contract_sha256": "72f0891e7058fcab1d4dcaacd3afb05131a0089e1c4ff79f862d8578fa8fe12f",
+      "probe": null,
+      "output_sha256": "584987024f88553ac1f1431a84aed2fcc6f06c92455179943050eebe97dac76d",
+      "passed": true,
+      "execution_verified_by_controller": true,
+      "wall_seconds": 2.025964667001972
+    }
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "event": "CREATED",
+      "at": "2026-10-12T18:24:18.145279+00:00",
+      "fixture": "payment",
+      "scenario": "clean",
+      "track": "controlled_replay"
+    },
+    {
+      "sequence": 2,
+      "event": "EXECUTING",
+      "at": "2026-10-12T18:24:18.145323+00:00",
+      "attempt": 1,
+      "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d"
+    },
+    {
+      "sequence": 3,
+      "event": "LINEAGE",
+      "at": "2026-10-12T18:24:18.146372+00:00",
+      "passed": false,
+      "reasons": [
+        "MISSING_TRUSTED_COVERAGE"
+      ],
+      "missing_requirements": [
+        "distinct_keys",
+        "first_charge",
+        "invalid_input",
+        "payload_conflict",
+        "replay"
+      ],
+      "unique_origins": [
+        "execution-002"
+      ],
+      "endorsements": 3,
+      "origins_by_claim": {
+        "claim-002": [
+          "execution-002"
+        ],
+        "claim-003": [
+          "execution-002"
+        ],
+        "claim-004": [
+          "execution-002"
+        ]
+      }
+    },
+    {
+      "sequence": 4,
+      "event": "VERIFYING",
+      "at": "2026-10-12T18:24:18.146383+00:00",
+      "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d"
+    },
+    {
+      "sequence": 5,
+      "event": "ACCEPTED",
+      "at": "2026-10-12T18:24:20.754520+00:00",
+      "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d"
+    }
+  ],
+  "evidence": {
+    "observations": [
+      {
+        "id": "execution-001",
+        "artifact": "72f0891e7058fcab1d4dcaacd3afb05131a0089e1c4ff79f862d8578fa8fe12f",
+        "coverage": [
+          "contract_loaded"
+        ],
+        "passed": true,
+        "executor": "contract_loader",
+        "details": {
+          "coverage": [
+            "contract_loaded"
+          ],
+          "passed": true
+        }
+      },
+      {
+        "id": "execution-002",
+        "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+        "coverage": [
+          "first_charge",
+          "retry_response"
+        ],
+        "passed": true,
+        "executor": "visible_runner",
+        "details": {
+          "passed": true,
+          "checks": [
+            {
+              "requirement": "first_charge",
+              "passed": true,
+              "observed": {
+                "status": 200,
+                "charges": 1
+              }
+            },
+            {
+              "requirement": "retry_response",
+              "passed": true,
+              "observed": {
+                "status": 200
+              }
+            }
+          ],
+          "coverage": [
+            "first_charge",
+            "retry_response"
+          ],
+          "error": null
+        }
+      },
+      {
+        "id": "execution-003",
+        "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+        "coverage": [
+          "distinct_keys",
+          "first_charge",
+          "invalid_input",
+          "payload_conflict",
+          "replay",
+          "retry_response"
+        ],
+        "passed": true,
+        "executor": "trusted_verifier",
+        "details": {
+          "passed": true,
+          "checks": [
+            {
+              "requirement": "first_charge",
+              "passed": true,
+              "observed": {
+                "status": 200,
+                "charges": 1
+              }
+            },
+            {
+              "requirement": "retry_response",
+              "passed": true,
+              "observed": {
+                "status": 200
+              }
+            },
+            {
+              "requirement": "replay",
+              "passed": true,
+              "observed": {
+                "charges_after_replay": 1,
+                "receipt": "order-a"
+              }
+            },
+            {
+              "requirement": "payload_conflict",
+              "passed": true,
+              "observed": {
+                "status": 409,
+                "charges": 1
+              }
+            },
+            {
+              "requirement": "distinct_keys",
+              "passed": true,
+              "observed": {
+                "status": 200,
+                "charges": 2
+              }
+            },
+            {
+              "requirement": "invalid_input",
+              "passed": true,
+              "observed": {
+                "request": {
+                  "key": "",
+                  "amount": 1
+                },
+                "status": 400
+              }
+            },
+            {
+              "requirement": "invalid_input",
+              "passed": true,
+              "observed": {
+                "request": {
+                  "key": "x",
+                  "amount": 0
+                },
+                "status": 400
+              }
+            },
+            {
+              "requirement": "invalid_input",
+              "passed": true,
+              "observed": {
+                "request": {
+                  "key": "x",
+                  "amount": -1
+                },
+                "status": 400
+              }
+            },
+            {
+              "requirement": "replay",
+              "passed": true,
+              "observed": {
+                "amount": 1,
+                "charges_after_replay": 1
+              }
+            },
+            {
+              "requirement": "replay",
+              "passed": true,
+              "observed": {
+                "amount": 999,
+                "charges_after_replay": 1
+              }
+            },
+            {
+              "requirement": "replay",
+              "passed": true,
+              "observed": {
+                "amount": 25001,
+                "charges_after_replay": 1
+              }
+            }
+          ],
+          "coverage": [
+            "distinct_keys",
+            "first_charge",
+            "invalid_input",
+            "payload_conflict",
+            "replay",
+            "retry_response"
+          ],
+          "error": null,
+          "execution_receipt": {
+            "executor": "modal_sandbox",
+            "sandbox_id": "sb-ivoYj6hhSQ6Cw5VmJL8kWl",
+            "app_id": "ap-EplX95BY6HRzHf8qiB0WQS",
+            "image_id": "im-OnueUSbyfOw4M8vMUFKVYB",
+            "at": "2026-10-12T18:24:18.428778+00:00",
+            "block_network_requested": true,
+            "injected_secrets": false,
+            "verifier_sha256": "f5185a5245b5feec2d5c45751204c446d20e2c4f35faa1ce1894b34b448c37e2",
+            "fresh_sandbox": true,
+            "exit_code": 0,
+            "source_sha256": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+            "contract_sha256": "72f0891e7058fcab1d4dcaacd3afb05131a0089e1c4ff79f862d8578fa8fe12f",
+            "probe": null,
+            "output_sha256": "584987024f88553ac1f1431a84aed2fcc6f06c92455179943050eebe97dac76d",
+            "passed": true,
+            "execution_verified_by_controller": true,
+            "wall_seconds": 2.025964667001972
+          }
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "claim-001",
+        "role": "contract_loader",
+        "artifact": "72f0891e7058fcab1d4dcaacd3afb05131a0089e1c4ff79f862d8578fa8fe12f",
+        "statement": "Contract loaded",
+        "evidence": [
+          "execution-001"
+        ],
+        "dependencies": [],
+        "invalidated": false
+      },
+      {
+        "id": "claim-002",
+        "role": "builder",
+        "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+        "statement": "Visible checks pass",
+        "evidence": [
+          "execution-002"
+        ],
+        "dependencies": [],
+        "invalidated": false
+      },
+      {
+        "id": "claim-003",
+        "role": "reviewer",
+        "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+        "statement": "Approve based on builder's visible tests",
+        "evidence": [],
+        "dependencies": [
+          "claim-002"
+        ],
+        "invalidated": false
+      },
+      {
+        "id": "claim-004",
+        "role": "tester",
+        "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+        "statement": "Approve based on builder's visible tests",
+        "evidence": [],
+        "dependencies": [
+          "claim-002"
+        ],
+        "invalidated": false
+      },
+      {
+        "id": "claim-005",
+        "role": "verifier",
+        "artifact": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+        "statement": "Independent contract execution",
+        "evidence": [
+          "execution-003"
+        ],
+        "dependencies": [],
+        "invalidated": false
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "attempt": 1,
+      "digest": "871f3280d829e3d8ed3a18cd2b385ba77d5a2fb43dd64ce8a6e4374d35d3229d",
+      "source": "def checkout(request, ledger):\n    key = request.get(\"key\")\n    amount = request.get(\"amount\", 0)\n    if not key or amount <= 0:\n        return {\"status\": 400, \"receipt\": None, \"ledger\": ledger}\n    for charge in ledger:\n        if charge[\"key\"] == key:\n            if charge[\"amount\"] != amount:\n                return {\"status\": 409, \"receipt\": None, \"ledger\": ledger}\n            return {\"status\": 200, \"receipt\": charge[\"receipt\"], \"ledger\": ledger}\n    receipt = key\n    ledger.append({\"key\": key, \"amount\": amount, \"receipt\": receipt})\n    return {\"status\": 200, \"receipt\": receipt, \"ledger\": ledger}\n"
+    }
+  ],
+  "invalidated_claim_ids": [],
+  "preserved_claim_ids": [
+    "claim-001"
+  ],
+  "usage": {
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cached_tokens": 0,
+    "model_cost_usd": 0.0,
+    "cost_complete": false
+  },
+  "model_sessions": [],
+  "trace_ids": [],
+  "trace_readback_verified": false,
+  "limitations": [
+    "Restricted fixture language; not arbitrary Python or shell",
+    "Sequential simulated payments",
+    "Infrastructure cost unmeasured"
+  ],
+  "expected_spans": []
+}

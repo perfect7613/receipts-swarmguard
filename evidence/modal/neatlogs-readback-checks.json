@@ -1,0 +1,26 @@
+[
+  {
+    "track": "red-team",
+    "trace_id": "3c9a79711fb743e7487fe652c975dac7",
+    "finalized": true,
+    "all_span_ids_and_kinds_match": true,
+    "one_root_and_resolved_parents": true,
+    "full_pagination": true,
+    "spans": 11,
+    "total_tokens": 57525,
+    "guardrail_content_verified": false,
+    "actual_billing_verified": false
+  },
+  {
+    "track": "hardened-replay",
+    "trace_id": "ce1f5f95f604cd21e93c2eed92fe208e",
+    "finalized": true,
+    "all_span_ids_and_kinds_match": true,
+    "one_root_and_resolved_parents": true,
+    "full_pagination": true,
+    "spans": 15,
+    "total_tokens": 62795,
+    "guardrail_content_verified": false,
+    "actual_billing_verified": false
+  }
+]

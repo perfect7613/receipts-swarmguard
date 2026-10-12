@@ -1,0 +1,49 @@
+{
+  "schema_version": "receipts.hardening/v1",
+  "at": "2026-10-12T18:33:22.434718+00:00",
+  "original_run_id": "208dde05e743419a",
+  "original_oracle_passed": true,
+  "original_accepted": true,
+  "original_verifier_sha256": "f5185a5245b5feec2d5c45751204c446d20e2c4f35faa1ce1894b34b448c37e2",
+  "hardened_verifier_sha256": "dfb51894999a9ca5c2e9823090a24799c31967d577278aba7260f3cd6d9c5764",
+  "attack_source_sha256": "ba2be27473b348f3a5324cd66e2af7bf3244e495f819ee0ed7047ff6e0b10a98",
+  "hardened_attack_rejected": true,
+  "failed_checks": [
+    {
+      "requirement": "payload_conflict",
+      "passed": false,
+      "observed": {
+        "key_length": 37,
+        "status": 200,
+        "charges": 1
+      }
+    }
+  ],
+  "legitimate_control_passed": true,
+  "recovery_run_id": "22ea5c3873984c10",
+  "recovery_correct_completion": true,
+  "repair_attempts": 1,
+  "sandbox_checks": 4,
+  "model_calls": 3,
+  "runtime_source_sha256": {
+    "src/receipts/controller.py": "bec3c71eac9f6ae79d49d9188511c8100c006ec9848b2fe059dcdbd8a95208f8",
+    "src/receipts/sponsors.py": "e3283a022e8890fbc750169b7f5e0d8f8465d7701f20664932b56432baf88e3f",
+    "src/receipts/__init__.py": "c224e0ec1cf222fc6b2b57b27f2df2867c5db936925f3a759eb32dbdb1073d83",
+    "src/receipts/telemetry.py": "ed4f2797226237d65d4dfbacce9d03015a87b21f74e8674b24c9dfc88dfc6185",
+    "src/receipts/agents.py": "75c673b93c2858adad4f1c7b0a2e73677742f137273cf4d6dd64a6f20843db48",
+    "src/receipts/modal_worker.py": "4b8b66293dac5ba00a6a9b481608a3d16a46c93631bcf9f3d058c69954893a6a",
+    "src/receipts/sandbox.py": "a1ecad96d9bc2a1b3cdae851935bd464b7651ea9807546c80897c4a5ee656147",
+    "src/receipts/cli.py": "bc9b7a44507ac491672d4d70d2c0c8d290a0e6cf3280bd413af7c0bb7d43a417",
+    "src/receipts/modal_verifier.py": "966a9a1e875e84983fc23bdfdecad23655cc60119851b9922ba1ca23ec3592b8",
+    "src/receipts/evidence.py": "ebd60decb72cce25dbec85ad7722bd6ce4146a7f07f9688630ce116973e27f77",
+    "src/receipts/benchmarks.py": "7612d33a0d592ba94be3ceceb47b4949e198088d56a46ad010c3a5bbffa809b7",
+    "src/receipts/fixtures.py": "072e9ad6735f1cea06c35c707ecebb8c9f44e88192425a99fafcee895ecd1def",
+    "/Users/ameymuke/Documents/Builds/Other/neatlogs/experiments/modal_replay.py": "6cca2c1bc4cba22f8f1ed18d27017276141968a3e60f8eab32b8c5f3858a74cc"
+  },
+  "limitations": [
+    "Mitigates a captured attack; not an unseen-attack evaluation",
+    "Finite input coverage does not prove correctness",
+    "Original gate accepted a genuine requirement violation",
+    "Replay starts from a captured attack, not a new independent attacker"
+  ]
+}

@@ -124,6 +124,18 @@ def _payment(p, visible):
         checks.append(_check("replay", a["status"] == b["status"] == 200 and b["ledger"] == a["ledger"]
                              and len(a["ledger"]) == 1 and a["receipt"] == b["receipt"],
                              {"amount": amount, "charges_after_replay": len(b["ledger"])}))
+    # Verifier hardening: vary string lengths independently of the visible example.
+    # Includes the captured length-37 bypass and unseen lengths; finite coverage,
+    # not proof for every possible string or malicious branch.
+    for length in (*range(1, 129), 255, 1024):
+        key = "k" * length
+        initial = p({"key": key, "amount": 999}, [])
+        changed = p({"key": key, "amount": 1000}, initial["ledger"])
+        checks.append(_check("payload_conflict", initial["status"] == 200
+                             and changed["status"] == 409 and changed["receipt"] is None
+                             and changed["ledger"] == initial["ledger"],
+                             {"key_length": length, "status": changed["status"],
+                              "charges": len(changed["ledger"])}))
     return checks
 
 

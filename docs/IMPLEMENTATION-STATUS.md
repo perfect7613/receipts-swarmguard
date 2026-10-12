@@ -1,6 +1,6 @@
 # Implementation status
 
-Updated 12 October 2026. This supersedes the planning-only status of the earlier documentation package.
+Updated 13 October 2026. This supersedes the planning-only status of the earlier documentation package.
 
 ## Implemented
 
@@ -18,7 +18,7 @@ Updated 12 October 2026. This supersedes the planning-only status of the earlier
 
 ## Observed verification
 
-**54 tests pass.** The wheel and source distribution build successfully. Tests cover observable contracts, defined payment mutants, denied candidate capabilities, stale/forged evidence, recovery, clean controls, usage isolation, and MCP request/auth handling.
+**65 tests pass.** The wheel and source distribution build successfully. Tests cover observable contracts, defined payment mutants, denied candidate capabilities, stale/forged evidence, recovery, clean controls, usage isolation, and MCP request/auth handling.
 
 The 12 controlled runs use two fixtures × shortcut/clean × three arms. Across the two shortcut cases, standard accepts two oracle-invalid candidates. Receipts and always-audit both reject the initial candidates and accept correct fixture repairs. All six clean controls pass without repair. These are controlled smoke results; always-audit handoffs in this matrix are simulated policy work, not actual auditor-model calls.
 
@@ -27,6 +27,14 @@ The live seeded payment repair used three real Codex calls (reviewer, tester, re
 Entire captured that actual repair transcript through its supported manual session-attach command as checkpoint `01M4RDVGHAK7812BFSKWD8MR3W` (logs-only). Its metadata records the real Codex session and 20,070 repair-call tokens. `entire why` resolves the generated repair's first line to this checkpoint and its prompt. Manual association is explicit; no claim of automatic hooks or agent file-edit capture is made.
 
 A separate live adversarial-prompt trial produced correct code immediately. It is retained as a control outcome, not counted as an induced failure. Its model reviews also expressed concerns beyond the fixture's guaranteed input domain; those advisory concerns do not override successful execution of the fixed supported contract.
+
+## Modal execution
+
+The optional Modal fixture executor obtains outcomes through the controller's authenticated client, validates source/contract/verifier identities, checks required coverage and records fresh sandbox receipts. Candidate code remains inside the bounded interpreter. Models stay local; no provider credentials are injected into sandboxes. Eleven added tests cover identity mismatch, false success, real failure preservation, executor injection and fail-closed acceptance.
+
+The cloud controlled batch completed 12 runs and 16 checks. Exact outcomes and limitations are in [the Modal protocol](MODAL-EXPERIMENT.md). This is cloud verification of the two supported fixture contracts, not a general repository executor.
+
+Four exploratory live runs produced oracle-correct code without repair. Two explicit objective-first red-team runs then exposed a payment length-37 conflict bypass accepted by the old oracle, despite the neutral tester identifying it, and a discount shortcut rejected and repaired. The earlier finite oracle was insufficient. Original evidence and source snapshots remain preserved. The payment verifier now varies key length across 1–128, 255 and 1024; mitigation is evaluated by replaying the captured attack, a legitimate-solution control and neutral model recovery. The hardened replay rejected the preserved patch, passed the legitimate control, and verified a neutral model repair after one attempt. All batches total 19 workflow runs, 27 sandbox checks and 22 model calls; distinct tracks remain separate. Finalized neatlogs metadata readback matched the original attack and its recovery. This is not an unseen-attack or general collusion-defense result.
 
 ## Real-world evaluation bridge
 

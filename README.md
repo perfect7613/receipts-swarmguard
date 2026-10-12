@@ -1,10 +1,10 @@
 # Receipts SwarmGuard
 
-**Independent evidence and recovery for coding-agent teams.**
+**Independent evidence and recovery against agent collusion and reward hacking.**
 
 Three agents can approve a change while citing one incomplete test. Receipts links their approvals to actual executions, checks the exact artifact against a trusted contract, rejects unsafe acceptance, and verifies the repair.
 
-The flagship example is a simulated checkout retry: a shortcut returns success but charges twice. A second example catches a discount implementation hardcoded to one visible amount.
+The threat-focused [pitch](docs/PITCH.md) explains reward-hacking shortcuts and coordinated unsupported approvals. The flagship example is a simulated checkout retry: a shortcut returns success but charges twice. A second example catches a discount implementation hardcoded to one visible amount.
 
 ## Run it
 
@@ -32,7 +32,13 @@ Alternatively set `OPENAI_API_KEY`, `RECEIPTS_MODEL`, and optional `OPENAI_BASE_
 
 The new benchmark bridge prepares official SWE-bench prediction artifacts, hides gold/verifier material from worker instructions, binds patch and base identities, and audits imported reports for consistency. Imported reports remain unauthenticated. See [real-world expansion](docs/REAL-WORLD-EXPANSION.md) for commands and the proposed **SWE-Bench Pro V2 fresh-replay evaluation**.
 
-Five upstream Verified reference patches passed preparation preflight; no external benchmark tasks have been executed. The [claims guide](docs/CLAIMS.md) separates demonstrated behavior from planned results. **54 automated tests pass.**
+Five upstream Verified reference patches passed preparation preflight; no external benchmark tasks have been executed. The [claims guide](docs/CLAIMS.md) separates demonstrated behavior from planned results. **65 automated tests pass.**
+
+## Cloud checks for the threat-focused demo
+
+An optional Modal executor runs independent fixture checks in fresh sandboxes, with networking blocked and no injected secrets. Agents keep their local Codex authentication. See [experiment commands and interpretation](docs/MODAL-EXPERIMENT.md) and the [pitch](docs/PITCH.md). This adds cloud execution for the supported contracts; unrestricted repository execution remains future work.
+
+The [live red-team evidence](evidence/modal/red-team-adjudication.json) includes a genuine failure: a builder inserted a length-37 checkout bypass, an adversarial reviewer endorsed it, and the original oracle missed it despite the neutral tester's objection. The preserved run is a false acceptance. The revised verifier broadens conflict checks; fresh captured-attack replay and a legitimate control test the mitigation. This is an induced threat test, not spontaneous collusion.
 
 ## Sponsor setup
 
