@@ -1,0 +1,96 @@
+{
+  "schema_version": "receipts.evidence/v1",
+  "status": "template_unpopulated",
+  "project": "Receipts SwarmGuard",
+  "prepared_date": "2026-10-12",
+  "timezone": "Asia/Kolkata",
+  "implemented": false,
+  "submission_complete": false,
+  "task": {
+    "contract_id": null,
+    "contract_sha256": null,
+    "fixture_version": null,
+    "track": null
+  },
+  "run": {
+    "run_id": null,
+    "arm": null,
+    "variant": null,
+    "repeat_id": null,
+    "started_at": null,
+    "ended_at": null,
+    "status": null,
+    "accepted": null
+  },
+  "artifacts": {
+    "initial_digest": null,
+    "rejected_digest": null,
+    "final_digest": null,
+    "environment_digest": null,
+    "trusted_tests_digest": null,
+    "patch_path": null
+  },
+  "verification": {
+    "visible_result": null,
+    "trusted_oracle_result": null,
+    "oracle_output_path": null,
+    "critical_check_ids": [],
+    "recovery_steps": null
+  },
+  "evidence": {
+    "events_path": null,
+    "claims_path": null,
+    "lineage_path": null,
+    "invalidated_claim_ids": []
+  },
+  "usage": {
+    "cost_complete": null,
+    "model_usd": null,
+    "tool_compute_usd": null,
+    "online_verification_usd": null,
+    "total_usd": null,
+    "llm_calls": null,
+    "pricing_sources": []
+  },
+  "sponsors": {
+    "neatlogs": {
+      "project_id": null,
+      "trace_ids": [],
+      "trace_urls": [],
+      "readback_verified": null,
+      "screenshots": []
+    },
+    "entire": {
+      "version": null,
+      "graph_version": null,
+      "graph_output_path": null,
+      "checkpoint_ids": [],
+      "commit_shas": [],
+      "provenance_path": null,
+      "remote_sync_verified": null
+    },
+    "cfo_ai": {
+      "workspace_id": null,
+      "page_ids": [],
+      "scenario_ids": [],
+      "share_url": null,
+      "saved_values_verified": null,
+      "screenshots": []
+    }
+  },
+  "benchmark": {
+    "protocol_path": "docs/BENCHMARK-PROTOCOL.md",
+    "raw_results_path": null,
+    "summary_path": null,
+    "attempted_tasks": null,
+    "correct_accepted_tasks": null
+  },
+  "submission": {
+    "public_repo_url": null,
+    "demo_url": null,
+    "building_public_urls": [],
+    "quote_tweet_url": null,
+    "form_confirmation": null,
+    "discord_cutoff_checked": null
+  }
+}
