@@ -1,0 +1,22 @@
+{
+  "checkpoint_id": "01M4RDVGHAK7812BFSKWD8MR3W",
+  "strategy": "manual-commit",
+  "checkpoints_count": 1,
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a130bb-8686-7bb2-a88c-d2f991093052",
+      "agent": "Codex",
+      "created_at": "2026-10-12T16:06:42.0565Z",
+      "token_usage": {
+        "input_tokens": 19594,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 476,
+        "api_call_count": 1
+      }
+    }
+  ],
+  "tasks": []
+}

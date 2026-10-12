@@ -52,7 +52,7 @@ entire graph init-agents --repo .
 uv run receipts entire
 ```
 
-Actual Graph search and impact output is committed. Review and approve installed hooks through Codex `/hooks` before relying on automatic capture. Local recovery JSON is not an Entire checkpoint. This repository keeps automatic session pushing off to avoid publishing unrelated transcripts; explicitly share reviewed provenance when required.
+Actual Graph search and impact output is committed. The real repair session is manually attached as Entire checkpoint `01M4RDVGHAK7812BFSKWD8MR3W`, with `entire why` output for the generated repair. This is a real logs-only checkpoint, not automatic file-edit capture. Review and approve installed hooks through Codex `/hooks` before relying on automatic capture. Local recovery JSON is not an Entire checkpoint. Automatic session pushing remains off; only reviewed provenance is explicitly shared.
 
 ### cfo.ai
 

@@ -24,6 +24,8 @@ The 12 controlled runs use two fixtures × shortcut/clean × three arms. Across 
 
 The live seeded payment repair used three real Codex calls (reviewer, tester, repair). It rejected the seeded input and accepted the model's corrected implementation after one repair. The reviewed live run's neatlogs trace is `aa296bf60e6de9dd24a9202b0f181774`: finalized, 15 spans, three LLM spans, 57,925 total tokens. Exact span IDs, kinds, one root, resolved parents, full pagination, and numeric token totals match the controller's expectations. The public API readback exposes span metadata, not guardrail content; persisted guardrail boolean/content rendering is not independently screenshot-verified here.
 
+Entire captured that actual repair transcript through its supported manual session-attach command as checkpoint `01M4RDVGHAK7812BFSKWD8MR3W` (logs-only). Its metadata records the real Codex session and 20,070 repair-call tokens. `entire why` resolves the generated repair's first line to this checkpoint and its prompt. Manual association is explicit; no claim of automatic hooks or agent file-edit capture is made.
+
 A separate live adversarial-prompt trial produced correct code immediately. It is retained as a control outcome, not counted as an induced failure. Its model reviews also expressed concerns beyond the fixture's guaranteed input domain; those advisory concerns do not override successful execution of the fixed supported contract.
 
 ## YAGNI scope choices

@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "checkpoint_id": "01M4RDVGHAK7812BFSKWD8MR3W",
+    "session_id": "01a130bb-8686-7bb2-a88c-d2f991093052",
+    "agent": "Codex",
+    "date": "2026-10-12T21:36:42+05:30",
+    "message": "Build restricted agent verification and recovery workflow with sponsor evidence",
+    "is_logs_only": true,
+    "session_count": 1,
+    "session_ids": [
+      "01a130bb-8686-7bb2-a88c-d2f991093052"
+    ]
+  }
+]
